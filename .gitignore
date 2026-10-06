@@ -1,0 +1,21 @@
+# Security & Secret Keys
+.env
+*.env
+*.pem
+
+# Python Artifacts
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Java & Maven Build Outputs
+**/target/
+*.class
+*.jar
+
+# IDE Configurations
+.idea/
+.vscode/
+*.suo
+*.ntvs*
