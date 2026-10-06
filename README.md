@@ -96,3 +96,42 @@ AURA-Enterprise-OS/
 │       └── pom.xml                 # Java dependencies
 │
 └── .gitignore                      # Security and build-artifact exclusions
+
+```
+
+⚙️ Installation & Setup
+1️⃣ Clone the Repository
+Bash
+git clone [https://github.com/arshdeepsarsh/AURA-Enterprise-OS.git](https://github.com/arshdeepsarsh/AURA-Enterprise-OS.git)
+cd AURA-Enterprise-OS
+2️⃣ Configure the Java Ledger (aura-core)
+Navigate to aura-core/core/src/main/resources/application.properties.
+
+Add your Supabase PostgreSQL JDBC connection string and password:
+
+Properties
+spring.datasource.url=jdbc:postgresql://<your-supabase-url>:5432/postgres?user=postgres&password=<your-password>
+Start the Spring Boot server:
+
+Bash
+cd aura-core/core
+.\mvnw spring-boot:run
+The server will boot on http://localhost:8080.
+
+3️⃣ Configure the AI Brain (aura-brain)
+Navigate to the aura-brain directory.
+
+Create a .env file and add your Supabase and Google Gemini API keys:
+
+Plaintext
+SUPABASE_URL=[https://your-project.supabase.co](https://your-project.supabase.co)
+SUPABASE_KEY=your_anon_key
+GEMINI_API_KEY=your_gemini_key
+Install the required Python libraries:
+
+Bash
+pip install requests supabase python-dotenv google-generativeai numpy
+4️⃣ Run the System
+Send Data: Run python send_invoice.py to push a pending contract to the Java Ledger.
+
+Audit Data: Run python audit_agent.py to awaken the Gemini LLM. It will fetch the pending invoice from Java, analyze it against corporate thresholds, and autonomously update the ledger with its decision.
