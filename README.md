@@ -99,7 +99,7 @@ AURA-Enterprise-OS/
 
 ```
 
-⚙️ Installation & Setup
+## ⚙️ Installation & Setup
 1️⃣ Clone the Repository
 Bash
 git clone [https://github.com/arshdeepsarsh/AURA-Enterprise-OS.git](https://github.com/arshdeepsarsh/AURA-Enterprise-OS.git)
